@@ -2,7 +2,6 @@
   "name": "raidbell",
   "version": "0.1.0",
   "description": "Rust+ companion bot for Telegram: raid alerts, server events, team chat bridge, smart switches",
-  "main": "index.js",
   "scripts": {
     "test": "vitest run",
     "dev": "tsx watch src/main.ts",
@@ -20,6 +19,7 @@
     "node": ">=22"
   },
   "dependencies": {
+    "@grammyjs/auto-retry": "^2.0.2",
     "@liamcottle/rustplus.js": "^2.5.0",
     "grammy": "^1.48.0",
     "zod": "^4.6.7"

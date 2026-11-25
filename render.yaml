@@ -1,0 +1,16 @@
+# Render Blueprint for the public demo bot (MODE=demo): every Telegram chat gets a simulated server.
+services:
+  - type: web
+    name: raidbell-demo
+    runtime: docker
+    plan: free
+    region: frankfurt
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      - key: MODE
+        value: demo
+      - key: PORT
+        value: "8080"
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false # from @BotFather

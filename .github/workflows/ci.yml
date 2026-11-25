@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+
+  docker:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t raidbell .
+      - name: The image starts and explains missing settings
+        run: |
+          out=$(docker run --rm raidbell 2>&1 || true)
+          echo "$out"
+          echo "$out" | grep -q "TELEGRAM_BOT_TOKEN"
+          echo "image size: $(docker image inspect raidbell --format '{{.Size}}' | numfmt --to=iec)"

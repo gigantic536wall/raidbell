@@ -1,0 +1,6 @@
+[
+  { "entityId": 12345678, "name": "Main base alarm", "kind": "alarm" },
+  { "entityId": 23456789, "name": "Auto turrets", "kind": "switch" },
+  { "entityId": 34567890, "name": "Base lights", "kind": "switch" },
+  { "entityId": 45678901, "name": "Main tool cupboard", "kind": "monitor" }
+]
