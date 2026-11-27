@@ -12,8 +12,9 @@ official Rust+ companion protocol and tells your Telegram group what is happenin
 - 💬 **Chat bridge:** messages in the Telegram group go to the in-game team chat, and back
 - 🔌 **Smart switches** on and off with buttons; `/status`, `/team`, `/events`, `/upkeep` on demand
 
-**▶ Try it:** DEMO_BOT_LINK: the demo gives your chat its own simulated server, where a cargo ship
+**▶ Try it:** [@raidbell_demo_bot](https://t.me/raidbell_demo_bot), send `/start`. The demo gives your chat its own simulated server, where a cargo ship
 arrives, the helicopter is shot down, a teammate dies and your base gets raided within a few minutes.
+(Free hosting: after a quiet spell the first reply can take up to a minute.)
 
 ## How it works
 
